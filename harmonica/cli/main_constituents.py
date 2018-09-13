@@ -45,11 +45,11 @@ def execute(args):
     print("\nComplete.\n")
 
 
-def main(*args, **kwargs):
+def main(args=None):
     if not args:
-        args = sys.argv
+        args = sys.argv[1:]
     try:
-        execute(parse_args(args[1:]))
+        execute(parse_args(args))
     except RuntimeError as e:
         print(str(e))
         sys.exit(1)
