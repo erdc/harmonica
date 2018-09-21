@@ -5,12 +5,14 @@ from datetime import datetime
 import argparse
 import numpy as np
 import pandas as pd
+import sys
 
 DESCR = 'Deconstruct the signal into its tidal constituents.'
 EXAMPLE = """
 Example:
 
-    harmonica deconstruct 38.375789 -74.943915 -C M2 K1 -M tpxo8
+    harmonica deconstruct CO-OPS__8760922__wl.csv --columns "Date Time" "Water Level" \
+        --datetime_format '%Y-%m-%d %H:%M' -C M2 S2 N2 K1
 """
 
 def config_parser(p, sub=False):
